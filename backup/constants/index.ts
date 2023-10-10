@@ -1,5 +1,3 @@
-import { title } from "process";
-
 export const manufacturers = [
     "Acura",
     "Alfa Romeo",
@@ -94,25 +92,10 @@ export const manufacturers = [
     {
       title: "Socials",
       links: [
-        { title: "LinkedIn", url: "/" },
+        { title: "Discord", url: "/" },
         { title: "Instagram", url: "/" },
         { title: "Twitter", url: "/" },
         { title: "Facebook", url: "/" },
       ],
     },
   ];
-  
-  export const Vehicle=[
-    "Cars",
-    "Motorbikes",
-    "Foot Scooters",
-    "Mopeds",
-    "Food Delivery Bikes",
-    "Bikes",
-    "Trucks",
-    "Carts",
-    "Buses",
-    "Scooters",
-    "Mobility",
-    "3-Wheelers"
-  ]

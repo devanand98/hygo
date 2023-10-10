@@ -1,7 +1,5 @@
 
-import { CarCard, CustomFilter, Hero, SearchBar, VehicleCard } from '@/components'
-import Banner from '@/components/banner';
-import { Vehicle } from '@/constants';
+import { CarCard, CustomFilter, Hero, SearchBar } from '@/components'
 import { fetchCars } from '@/utils'
 import Image from 'next/image'
 
@@ -9,10 +7,7 @@ export default async function Home() {
 const allCars = await fetchCars();
 
 const isDataEmpty = !Array.isArray(allCars) || allCars.length<1 || !allCars;
-const carsForSale = 1000;
-  const visitorsPerDay = 5000;
-  const dealerReviews = 1200;
-  const verifiedDealers = 50;
+
 
   return (
     <main className="overflow-hidden">
@@ -27,25 +22,18 @@ const carsForSale = 1000;
         <div className="home__filters">
           <SearchBar />
 
-          {/* <div className='home__filter-container'>
+          <div className='home__filter-container'>
             <CustomFilter title='country' />
             <CustomFilter title='year' />
-          </div> */}
+          </div>
         </div>
 
       {!isDataEmpty ? (
         <section>
-          {/* <div className='home__cars-wrapper'>
+          <div className='home__cars-wrapper'>
             {allCars?.map((car) => (
               <CarCard car={car} />
             ))}
-          </div> */}
-          <div className="home__cars-wrapper">
-          
-      {Vehicle.map((Vehicle, index) => (
-        <VehicleCard key={index} Vehicle={Vehicle} />
-      ))}
-    
           </div>
 
         </section>
@@ -56,15 +44,6 @@ const carsForSale = 1000;
         </div>
       )}
       </div>
-      <div>
-      <Banner
-        carsForSale={carsForSale}
-        visitorsPerDay={visitorsPerDay}
-        dealerReviews={dealerReviews}
-        verifiedDealers={verifiedDealers}
-      />
-      
-    </div>
     </main>
     
   )
